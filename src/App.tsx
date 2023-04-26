@@ -1,13 +1,15 @@
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/theme/default";
 import { GlobalStyle } from "./styles/global";
+import { Trasactions } from "./pages/Transactions";
 
 export function App() {
 
   return (
   <ThemeProvider theme={defaultTheme}>
     <GlobalStyle />
-    <>Hello World</>
+
+      <Trasactions />
   </ThemeProvider>
   )
 }
