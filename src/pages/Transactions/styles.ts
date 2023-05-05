@@ -11,7 +11,7 @@ export const TransactionTable = styled.table`
   width: 100%;
   border-collapse: separate; // colocar isso tag table eu possu usar a propriedade 'border-spacing'
   border-spacing: 0 0.5rem;
-  /* margin-top: 1.5rem; */
+  margin-top: 1.5rem;
 
   td {
     padding: 1.25rem 2rem;
