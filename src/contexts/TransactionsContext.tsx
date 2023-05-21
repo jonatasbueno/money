@@ -33,6 +33,12 @@ export const TransactionsContext = createContext({} as TransactoinsContextType)
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
+  /**
+   * useCallback irá manter o valor de referência da função até que suas
+   * dependências sofram alteraçôes, evitando propagação de renderizão
+   * desnecessário para componentes que consomem funçãoes que a utilizam como
+   * props
+   */
   const fetchTransactions = useCallback(async (query?: string) => {
     const response = await api.get('transactions', {
       params: { q: query, _sort: 'createdAt', _order: 'desc' },

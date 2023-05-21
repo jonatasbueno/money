@@ -9,6 +9,11 @@ export function useSummary() {
     (context) => context.transactions,
   )
 
+  /**
+   * useMemo memoizará o valor de retorno da variãvel até que suas dependências
+   * sofram alterações, dessa forma evitando propagação de renderização em
+   * cadeia de componentes que consomem essa variável memoizada como prop
+   */
   const summary = useMemo(() => {
     return transactions.reduce(
       (accumulator, transaction) => {
